@@ -38,6 +38,7 @@ $horizontalPics = 1;
 # to use any of the various versions of the perl converter dicom_to_minc of mydcm2mnc you will have 
 # to specify what it is called and the uploader will try to invoke it. 
 $converter      = "dcm2mnc";
+# if dcm2mnc is used, options can be specified in the following variable. Type dcm2mnc -help for the list of options. Do not use the options -dname, -stdin and -clobber as they are already set by default in the MRI pipeline script
 $dcm2mnc_options= "-nosplitecho";
 
 # where to store the library of used tarchives
