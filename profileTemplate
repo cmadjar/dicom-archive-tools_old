@@ -38,6 +38,7 @@ $horizontalPics = 1;
 # to use any of the various versions of the perl converter dicom_to_minc of mydcm2mnc you will have 
 # to specify what it is called and the uploader will try to invoke it. 
 $converter      = "dcm2mnc";
+$dcm2mnc_options= "-nosplitecho";
 
 # where to store the library of used tarchives
 # if this is not set they will not be moved
