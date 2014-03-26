@@ -70,11 +70,11 @@ GetOptions(\@arg_table, \@ARGV) ||  exit 1;
 if ($version) { print "Version: $versionInfo\n"; exit; }
 
 # checking for profile settings
-if(-f "$ENV{HOME}/.neurodb/$profile") {
-	{ package Settings; do "$ENV{HOME}/.neurodb/$profile" }
+if(-f "$ENV{CONFIG}/.neurodb/$profile") {
+	{ package Settings; do "$ENV{CONFIG}/.neurodb/$profile" }
 }
 if ($profile && !defined @Settings::db) {
-    print "\n\tERROR: You don't have a configuration file named '$profile' in:  $ENV{HOME}/.neurodb/ \n\n"; exit 33;
+    print "\n\tERROR: You don't have a configuration file named '$profile' in:  $ENV{CONFIG}/.neurodb/ \n\n"; exit 33;
 } 
 # The source and the target dir have to be present and must be directories. The absolute path will be supplied if necessary
 if(scalar(@ARGV) != 2) { print "\nError: Missing source and/or target\n\n".$Usage; exit 1; } $dcm_source = abs_path($ARGV[0]); $targetlocation = abs_path($ARGV[1]);

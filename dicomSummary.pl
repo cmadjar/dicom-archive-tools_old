@@ -80,8 +80,8 @@ GetOptions(\@arg_table, \@ARGV) || exit 1;
 if ($version) { print "$versionInfo\n"; exit; }
 
 # checking for profile settings
-if($profile && -f "$ENV{HOME}/.neurodb/$profile") { { package Settings; do "$ENV{HOME}/.neurodb/$profile" } }    
-if ($profile && !defined @Settings::db) { print "\n\tERROR: You don't have a configuration file named '$profile' in:  $ENV{HOME}/.neurodb/ \n\n"; exit 33; }
+if($profile && -f "$ENV{CONFIG}/.neurodb/$profile") { { package Settings; do "$ENV{CONFIG}/.neurodb/$profile" } }    
+if ($profile && !defined @Settings::db) { print "\n\tERROR: You don't have a configuration file named '$profile' in:  $ENV{CONFIG}/.neurodb/ \n\n"; exit 33; }
 
 
 # basic error checking on dcm dir
